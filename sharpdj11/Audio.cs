@@ -27,12 +27,12 @@ namespace sharpdj11
 
             if (String.IsNullOrEmpty(this.Album))
             {
-                this.Album = "Неизвестный альбом";
+                this.Album = "Unknown album detected";
             }
 
             if (String.IsNullOrEmpty(this.Singer))
             {
-                this.Singer = "Неизвестный исполнитель";
+                this.Singer = "Unknown artist detected";
             }
         }
     }

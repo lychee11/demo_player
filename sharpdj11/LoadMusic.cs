@@ -11,7 +11,7 @@ namespace sharpdj11
 {
     class LoadMusic
     {
-        string[] Formats = new string[] { ".mp3", ".wav", ".flac" };
+        string[] Formats = new string[] { ".mp3", ".wav", ".flac", ".aac", ".m4p",".m4a" };
 
         public List<Audio> GetMusic(string Path)
         {

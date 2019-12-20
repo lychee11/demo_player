@@ -19,11 +19,38 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <StackPanel Name="Info" Grid.Column="1" Orientation ="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="37.333,51,0,96" Width="334" Height="113" Grid.RowSpan="3" >
+
+            <StackPanel Orientation="Vertical">
 
 
+                <TextBlock Text="{Binding Title}" VerticalAlignment="Bottom" FontSize="17" FontWeight="Regular" Height="82" Margin="10,0,69,0" TextWrapping="Wrap">
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush>
+                            <GradientStop Color="CadetBlue" Offset="1" />
+                            <GradientStop Color="DeepSkyBlue" Offset="0.5" />
+                            <GradientStop Color="BlueViolet" Offset="0" />
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="20, 20, 0, 0" Grid.ColumnSpan="2">
-            <Button Width="50" Content="+" BorderThickness="0" FontSize="30" Cursor="Hand"  Click="AddPath_Click"/>
+                </TextBlock>
+                <TextBlock Text="{Binding Singer}" FontSize="17" FontWeight="Regular" Height="38" Margin="10,0,68.667,0" TextWrapping="Wrap">
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush>
+                            <GradientStop Color="DarkSlateBlue" Offset="1" />
+                            <GradientStop Color="DarkCyan" Offset="0.5" />
+                            <GradientStop Color="BlueViolet" Offset="0" />
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
+
+                </TextBlock>
+
+            </StackPanel>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="20, 20, 0, 0" >
+            <Button Width="50" Content="+" Background="#DDA0DD" BorderThickness="0" FontSize="30" Cursor="Hand"  Click="AddPath_Click"/>
 
             <TextBlock Margin="20,0,0,0" Text="Choose folder with tracks" VerticalAlignment="Center" FontSize="20" FontWeight="DemiBold">
                 <TextBlock.Foreground>
@@ -36,11 +63,12 @@
             </TextBlock>
         </StackPanel>
 
-        <ListBox Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="0" x:Name="ListPaths" Background="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+        <ListBox Grid.Row="1"  BorderThickness="0" x:Name="ListPaths" Background="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Button Width="35" BorderThickness="0" Content="{Binding}" Cursor="Hand" FontSize="20" Click="RemovePath_Click"/>
+                        <Button Background="#DDA0DD" Width="35" BorderThickness="0" Content="{Binding}" Cursor="Hand" FontSize="20" Click="RemovePath_Click"/>
                         <TextBlock Margin="10,0,0,0" Text="{Binding}" VerticalAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
                     </StackPanel>
                 </DataTemplate>
@@ -79,7 +107,7 @@
             <Border Width="40" Cursor="Hand" Margin="5, 10, 5, 10" Background="White" PreviewMouseLeftButtonDown="NextAudio_Click" BorderThickness="0">
                 <Image Source="/Images/NextB.png"/>
             </Border>
-            
+
         </StackPanel>
 
         <Slider Grid.Row="2" Grid.Column="1" Name="VolumeSlider" VerticalAlignment="Center" Margin="30, 0 120, 0" Maximum="1" Value="{Binding ElementName=ms, Path=Volume, Mode=TwoWay}"
@@ -125,11 +153,11 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <ListView Margin="0, 2, 0, 2" HorizontalContentAlignment="Stretch" BorderBrush="#FF0F0B0B" BorderThickness="3, 1, 3, 1" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView Margin="0, 2, 0, 2" HorizontalContentAlignment="Stretch" BorderBrush="DarkMagenta" BorderThickness="3, 1, 3, 1" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                         <ListView.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FF858585" Offset="1"/>
-                                <GradientStop Color="#FFC3C3C3" Offset="0"/>
+                                <GradientStop Color="Pink" Offset="1"/>
+                                <GradientStop Color="Magenta" Offset="0"/>
                             </LinearGradientBrush>
                         </ListView.Background>
                         <Grid Margin="5, 5, 0, 5" Cursor="Hand" MouseLeftButtonDown="Audio_MouseLeftButtonDown">

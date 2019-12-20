@@ -76,7 +76,8 @@ namespace sharpdj11
                 if (dialog.DialogResult.HasValue && dialog.DialogResult.Value)
                 {
 
-                    mainPL.AudioList = mainPL.AudioList.Where(x => x.Name != audioContext.Name || x.DirectoryName != audioContext.DirectoryName).ToList(); // то же делаем и для главного плейлиста
+                    mainPL.AudioList = mainPL.AudioList.Where(x => x.Name != audioContext.Name || x.DirectoryName != audioContext.DirectoryName).ToList();
+                    CurrentList = CurrentList.Where(x => x.Name != audioContext.Name || x.DirectoryName != audioContext.DirectoryName).ToList();
                     Play.ItemsSource = CurrentList;
                     if (CurrentList.Count > 0)
                     {
@@ -93,6 +94,7 @@ namespace sharpdj11
             }
 
             TagLib.File Ds = TagLib.File.Create(audioContext.DirectoryName + "\\" + audioContext.Name);
+            Info.DataContext = audioContext;
 
         }
 

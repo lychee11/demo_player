@@ -34,6 +34,10 @@ namespace sharpdj11
             {
                 this.Singer = "Unknown artist detected";
             }
+            if (String.IsNullOrEmpty(this.Title))
+            {
+                this.Title = "Unknown title detected";
+            }
         }
     }
 }
